@@ -20,9 +20,9 @@ class ScoreService @Inject()(appointmentService: AppointmentService,
 
         def scoreDoctors = {
 
-            val appointments = 9 + appointmentService.getAppointments().values.size
+            val appointments:Float = 9 + appointmentService.getAppointments().values.size
             val alertAppointments: List[Appointment] = appointmentService.getAlertAppointments().values.toList.flatten
-            val score = (appointments - alertAppointments.size) / appointments
+            val score:Float = (appointments - alertAppointments.size) / appointments
 
 
             val selectedDoctor = inMemoryDbService.doctors.head
