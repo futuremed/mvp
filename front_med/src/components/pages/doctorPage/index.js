@@ -27,7 +27,7 @@ export default class DoctorPage extends Component {
         doctor: {
           id: 2,
           firstName: 'Иван',
-          lastName: 'Иванович',
+          lastName: 'Иванов',
           sex: 'male',
         },
         patient: {
@@ -38,8 +38,8 @@ export default class DoctorPage extends Component {
           age: 123,
         },
         conclusionCode: 24,
-        complaints: [],
-        recommendations: [],
+        complaints: [1, 2, 3],
+        recommendations: [2001],
 
       }
       this.props.services.postAppointment(body);
@@ -70,12 +70,16 @@ export default class DoctorPage extends Component {
                   <label htmlFor="">Результаты осмотра</label>
                   <textarea 
                     name="" id="" cols="30" rows="10"
-                    onChange={(item) => this.changeField('resultSea', item)}
+                    onChange={(item) => this.changeField('resultSea', item)} 
+                    value='аллергия на белок'
+
                   ></textarea></div>
                 <div className="patient-row">
                   <label htmlFor="">Результаты  опроса</label>
                   <textarea name="" id="" cols="30" rows="10"
                     onChange={(item) => this.changeField('result', item)}
+                    value='боль при пальпации отсутствует'
+                    
                   ></textarea></div>
               </div>
               <div className="patient-right-col">
@@ -83,9 +87,7 @@ export default class DoctorPage extends Component {
                   <label htmlFor="">Тип приема</label>
                   <div className="custom-select">
                     <ul className="custom-option" style={{display: 'none'}}>
-                      <li className="custom-option-item" data-selected="0">VIP</li>
-                      <li className="custom-option-item" data-selected="1">Лояльный</li>
-                      <li className="custom-option-item" data-selected="2">поятоянный</li>
+                      <li className="custom-option-item" data-selected="0">Болезнь</li>
                     </ul>
                   </div>
                 </div>
@@ -108,25 +110,48 @@ export default class DoctorPage extends Component {
                   <label htmlFor="">Анализы (результаты)</label>
                   <div className="custom-select">
                     <ul className="custom-option"  style={{display: 'none'}}>
-                      <li className="custom-option-item" data-selected="6">Общий анализ крови</li>
+                      <li className="custom-option-item" data-selected="1">общий анализ крови - без патологий</li>
+                      <li className="custom-option-item" data-selected="2">общий анализ мочи - без патологий</li>
+                      <li className="custom-option-item" data-selected="3">Повышенный индекс массы тела</li>
+                      <li className="custom-option-item" data-selected="4">Пониженный индекс массы тела</li>
                     </ul>
                   </div>
                 </div>
                 <div className="patient-row">
                   <label htmlFor="">Предварительный диагноз </label>
-                  <input type="text" onChange={(item) => this.changeField('prevDiag', item)}/>
+                  <div className="custom-select">
+                    <ul className="custom-option"  style={{display: 'none'}}>
+                      <li className="custom-option-item" data-selected="1">Нарушение цикла</li>
+                      <li className="custom-option-item" data-selected="2">Метаболический синдром</li>
+                      <li className="custom-option-item" data-selected="3">Гиперэстрогения</li>
+                      <li className="custom-option-item" data-selected="4">Дипрессивный эпизод</li>
+                      <li className="custom-option-item" data-selected="5">Дефицит Д3</li>
+                      <li className="custom-option-item" data-selected="6">Ферритиновая анемия</li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="patient-row">
                   <label htmlFor="">Окончательный диагноз </label>
-                  <input type="text" onChange={(item) => this.changeField('lastDiag', item)}/>
+                  <div className="custom-select">
+                    <ul className="custom-option"  style={{display: 'none'}}>
+                      <li className="custom-option-item" data-selected="1">Нарушение цикла</li>
+                      <li className="custom-option-item" data-selected="2">Метаболический синдром</li>
+                      <li className="custom-option-item" data-selected="3">Гиперэстрогения</li>
+                      <li className="custom-option-item" data-selected="4">Дипрессивный эпизод</li>
+                      <li className="custom-option-item" data-selected="5">Дефицит Д3</li>
+                      <li className="custom-option-item" data-selected="6">Ферритиновая анемия</li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="patient-row">
                   <label htmlFor="">Назначение</label>
                   <div className="custom-select">
                     <ul className="custom-option" style={{display: 'none'}}>
-                      <li className="custom-option-item" data-selected="3">VIP</li>
-                      <li className="custom-option-item" data-selected="4">Лояльный</li>
-                      <li className="custom-option-item" data-selected="5">поятоянный</li>
+                      <li className="custom-option-item" data-selected="3">Ксенекал</li>
+                      <li className="custom-option-item" data-selected="4">Сибутрамин</li>
+                      <li className="custom-option-item" data-selected="5">Соблюдение пищевой диеты</li>
+                      <li className="custom-option-item" data-selected="6">Умеренные физические нагрузки</li>
+                      <li className="custom-option-item" data-selected="7">КОК (с повышенным содержанием прогестерона и дроспиренона)</li>
                     </ul>
                   </div>
                 </div>
@@ -134,14 +159,7 @@ export default class DoctorPage extends Component {
                   <label htmlFor="">Рекомендации</label>
                   <div className="custom-select">
                     <ul className="custom-option"  style={{display: 'none'}}>
-                      <li className="custom-option-item" data-selected="1">утомляемость</li>
-                      <li className="custom-option-item" data-selected="2">головная боль</li>
-                      <li className="custom-option-item" data-selected="3">тянущая боль внизу живота</li>
-                      <li className="custom-option-item" data-selected="4">повышенный аппетит</li>
-                      <li className="custom-option-item" data-selected="5">нарушение чистоты кожных покровов</li>
-                      <li className="custom-option-item" data-selected="6">слабость</li>
-                      <li className="custom-option-item" data-selected="7">снижение концентрации</li>
-                      <li className="custom-option-item" data-selected="8">сыпь</li>
+                      <li className="custom-option-item" data-selected="1">ЛФК</li>
                     </ul>
                   </div>
                 </div>

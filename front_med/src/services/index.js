@@ -1,4 +1,5 @@
-import db from  './clinic.json'
+import clinic from  './clinic.json'
+import appointment from  './appointment.json'
 
 export default class Service {
 
@@ -28,7 +29,7 @@ export default class Service {
 			throw new Error(res.status)
 		}
 	
-		return db || res.json();
+		return clinic || res.json();
 	}
     async getDoctor (id) {
 		const res = await fetch(`${this._apiBase}/doctor/${id}`);
@@ -36,7 +37,7 @@ export default class Service {
 			throw new Error(res.status)
 		}
 	
-		return await res.json();
+		return appointment || res.json();
 	}
 } 
 

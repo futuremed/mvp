@@ -12,19 +12,20 @@ export default class App extends Component {
     services = new Services();
 
     state = {
-        clinic: {},
+        clinic: null,
         department: '',
         currentDoctor: '',
     }
+    onChangeDoctor = () => this.setState({currentDoctor: 'Врач: Иванов И.И.'})
+    onChangeDepart = () => this.setState({department: 'Врачи (Гинекологическое отделение)'})
     componentDidMount() { 
         this.services.getClinic()
             .then(clinic => this.setState({clinic}))
     }
     
-
     render() {
         const {clinic, department, currentDoctor} = this.state;
-        console.log(clinic)
+        if(!clinic) return true;
 
         return (
             <Router>
@@ -36,7 +37,11 @@ export default class App extends Component {
                     />
                     <Switch>
                         <Route path="/" exact render={() =>(
-                            <MainPage data={clinic}/>)}
+                            <MainPage 
+                                data={clinic}
+                                onChangeDoctor={this.onChangeDoctor}
+                                onChangeDepart={this.onChangeDepart}
+                            />)}
                         />
                         <Route path="/doctor" exact render={() =>(
                             <DoctorPage

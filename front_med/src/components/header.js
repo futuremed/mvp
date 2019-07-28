@@ -4,11 +4,11 @@ import { Link, withRouter } from "react-router-dom";
 class Header extends Component {
 
     renderNav = () => (
-        <nav class="container full-w">
-            <div class="subheader-container">
-                <div class="subheader-item">{this.props.clinicName}</div>
-                <div class="subheader-item">Врачи {'(Гинекологическое отделение)' || this.props.department}</div>
-                <div class="subheader-item">{'Иванов И.И.' ||  this.props.currentDoctor}</div>
+        <nav className="container full-w">
+            <div className="subheader-container">
+                <div className="subheader-item">{this.props.clinicName}</div>
+                <div className="subheader-item">{this.props.department}</div>
+                <div className="subheader-item">{this.props.currentDoctor}</div>
             </div>
         </nav>
     );
