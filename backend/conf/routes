@@ -1,0 +1,9 @@
+POST        /appointment                   controllers.StatisticController.createAppointment
+
+GET         /score/clinic                  controllers.StatisticController.scoreForClinic
+
+GET         /score/doctor/:doctorId        controllers.StatisticController.scoreForDoctor(doctorId:Long)
+
+
+
+      
