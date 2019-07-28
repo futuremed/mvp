@@ -1,0 +1,19 @@
+{
+    "time": 1564301678,
+    "doctor": {
+      "id": 2,
+      "firstName": "Иван",
+      "lastName": "Иванов",
+      "sex": "MALE"
+    },
+    "patient": {
+      "id": 3,
+      "firstName": "asd",
+      "lastName": "a12",
+      "sex": "MALE",
+      "age": 25
+    },
+    "conclusionCode": 4,
+    "complaints": [8,9],
+    "recommendations":[9,1]
+  }

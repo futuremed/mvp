@@ -1,20 +1,60 @@
-.container {
-    height: 100vh;
-    max-width: 900px;
-    margin: 0 auto;
+body {
+	padding: 0;
+    margin: 0;
 }
-.menu {
+
+.subheader-container
+{
+    padding: 0 120px;
+    height: 45px;
+    align-items: center;
     display: flex;
+    justify-content: space-around;
+    background-color: #4c45cf;
 }
-.menu li {
-    margin: 10px 20px;
+
+.subheader-item
+{
+    color: white;
+    font-size: 20px;
 }
-.header {
-    width: 100%;
+/* main */
+.main
+{
+  padding: 60px 120px 0 120px;
+}
+.patient-title
+{
+    margin-bottom: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.patient-col
+{
+    width: 400px; 
+    height: 350px;
+}
+.patient-row {
     display: flex;
+    margin-bottom: 30px;
     justify-content: space-between;
 }
-.body {
-    display: flex;
-    margin-top: 100px;
+.patient-row > label {
+    font-size: 20px;
+    font-weight: bold;
+    width: 170px;
+}
+.patient-row > input {
+    height: 30px;
+    width: 300px;
+    border: 1px solid #9ad1d4;
+  padding: 0;
+}
+.patient-row > textarea
+{
+    border: 1px solid #9ad1d4;
+    height: 90px;
+    width: 300px;
+  padding: 0;
+  resize: none;
 }

@@ -1,0 +1,238 @@
+{
+    "name": "Городская Поликлиника №5",
+    "location": "107045, Москва, Даев пер. д.3, стр.1 ",
+    "doctorNumbers": 40,
+    "departments": 5,
+    "doctors": [
+        {
+            "id": 2,
+            "firstName": "Петров",
+            "lastName": "Сергей",
+            "experience": 10,
+            "sex": "MALE",
+            "score": 0,
+            "alertAppointments": [
+                {
+                    "time": 1564301678,
+                    "doctor": {
+                        "id": 2,
+                        "firstName": "Иван",
+                        "lastName": "Иванов",
+                        "sex": "MALE"
+                    },
+                    "patient": {
+                        "id": 3,
+                        "firstName": "asd",
+                        "lastName": "a12",
+                        "sex": "MALE",
+                        "age": 25
+                    },
+                    "conclusionCode": 3,
+                    "complaints": [
+                        8,
+                        9
+                    ],
+                    "recommendations": [
+                        9,
+                        1
+                    ]
+                },
+                {
+                    "time": 1564301678,
+                    "doctor": {
+                        "id": 2,
+                        "firstName": "Иван",
+                        "lastName": "Иванов",
+                        "sex": "MALE"
+                    },
+                    "patient": {
+                        "id": 3,
+                        "firstName": "asd",
+                        "lastName": "a12",
+                        "sex": "MALE",
+                        "age": 25
+                    },
+                    "conclusionCode": 4,
+                    "complaints": [
+                        8,
+                        9
+                    ],
+                    "recommendations": [
+                        9,
+                        1
+                    ]
+                }
+            ],
+            "statistics": [
+                {
+                    "timestamp": 1514764800,
+                    "score": 8.800000190734863
+                },
+                {
+                    "timestamp": 1517443200,
+                    "score": 8.100000381469727
+                },
+                {
+                    "timestamp": 1519862400,
+                    "score": 9
+                },
+                {
+                    "timestamp": 1522540800,
+                    "score": 8.300000190734863
+                },
+                {
+                    "timestamp": 1525132800,
+                    "score": 9.300000190734863
+                },
+                {
+                    "timestamp": 1527811200,
+                    "score": 9.199999809265137
+                },
+                {
+                    "timestamp": 1533081600,
+                    "score": 9.100000381469727
+                },
+                {
+                    "timestamp": 1535760000,
+                    "score": 9.300000190734863
+                },
+                {
+                    "timestamp": 1538352000,
+                    "score": 9.300000190734863
+                },
+                {
+                    "timestamp": 1541030400,
+                    "score": 8.199999809265137
+                },
+                {
+                    "timestamp": 1543622400,
+                    "score": 8.899999618530273
+                },
+                {
+                    "timestamp": 1546300800,
+                    "score": 9.300000190734863
+                },
+                {
+                    "timestamp": 1548979200,
+                    "score": 9.100000381469727
+                },
+                {
+                    "timestamp": 1548979200,
+                    "score": 9.199999809265137
+                },
+                {
+                    "timestamp": 1551398400,
+                    "score": 9.300000190734863
+                },
+                {
+                    "timestamp": 1554076800,
+                    "score": 8.850000381469727
+
+},
+                {
+                    "timestamp": 1559347200,
+                    "score": 8.699999809265137
+                },
+                {
+                    "timestamp": 1561939200,
+                    "score": 8.800000190734863
+                }
+            ]
+        },
+        {
+            "id": 1,
+            "firstName": "Иванов",
+            "lastName": "Иван",
+            "experience": 5,
+            "sex": "MALE",
+            "score": 7.800000190734863,
+            "alertAppointments": [],
+            "statistics": []
+        },
+        {
+            "id": 3,
+            "firstName": "Раздолькин",
+            "lastName": "Никита",
+            "experience": 7,
+            "sex": "MALE",
+            "score": 7.800000190734863,
+            "alertAppointments": [],
+            "statistics": []
+        }
+    ],
+    "score": 0,
+    "statistics": [
+        {
+            "timestamp": 1514764800,
+            "score": 7.800000190734863
+        },
+        {
+            "timestamp": 1517443200,
+            "score": 8.100000381469727
+        },
+        {
+            "timestamp": 1519862400,
+            "score": 8.300000190734863
+        },
+        {
+            "timestamp": 1522540800,
+            "score": 8.100000381469727
+        },
+        {
+            "timestamp": 1525132800,
+            "score": 8.699999809265137
+        },
+        {
+            "timestamp": 1527811200,
+            "score": 9
+        },
+        {
+            "timestamp": 1533081600,
+            "score": 9.100000381469727
+        },
+        {
+            "timestamp": 1535760000,
+            "score": 7.599999904632568
+        },
+        {
+            "timestamp": 1538352000,
+            "score": 7.699999809265137
+        },
+        {
+            "timestamp": 1541030400,
+            "score": 7.599999904632568
+        },
+        {
+            "timestamp": 1543622400,
+            "score": 7.900000095367432
+        },
+        {
+            "timestamp": 1546300800,
+            "score": 8.300000190734863
+        },
+        {
+            "timestamp": 1548979200,
+            "score": 8.100000381469727
+        },
+        {
+            "timestamp": 1548979200,
+            "score": 8.199999809265137
+        },
+        {
+            "timestamp": 1551398400,
+            "score": 8.300000190734863
+        },
+        {
+            "timestamp": 1554076800,
+            "score": 8.5
+        },
+        {
+            "timestamp": 1559347200,
+            "score": 8.600000381469727
+        },
+        {
+            "timestamp": 1561939200,
+            "score": 8.800000190734863
+        }
+    ]
+}
