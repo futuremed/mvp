@@ -2,7 +2,7 @@ package services
 
 import com.google.inject.Inject
 import javax.inject.Singleton
-import models.{Clinic, DoctorStatistic}
+import models.{Appointment, Clinic, DoctorStatistic}
 
 @Singleton
 class ScoreService @Inject()(appointmentService: AppointmentService,
@@ -18,11 +18,28 @@ class ScoreService @Inject()(appointmentService: AppointmentService,
 
         val score = (appointments - alertAppointment) / appointments
 
+        def scoreDoctors = {
+
+            val appointments = 9 + appointmentService.getAppointments().values.size
+            val alertAppointments: List[Appointment] = appointmentService.getAlertAppointments().values.toList.flatten
+            val score = (appointments - alertAppointments.size) / appointments
+
+
+            val selectedDoctor = inMemoryDbService.doctors.head
+            val hardcodedDoctors = inMemoryDbService.doctors.tail
+            if (alertAppointments.nonEmpty) {
+                selectedDoctor.copy(score = score, alertAppointments = alertAppointments) :: hardcodedDoctors
+            } else {
+                selectedDoctor :: hardcodedDoctors
+            }
+        }
+
+
         Clinic("Городская Поликлиника №5",
             "107045, Москва, Даев пер. д.3, стр.1 ",
             40,
             5,
-            inMemoryDbService.doctors,
+            scoreDoctors,
             score,
             historyScoreService.historyScoreForCompany
         )
@@ -38,20 +55,6 @@ class ScoreService @Inject()(appointmentService: AppointmentService,
 
 
         doctor.copy(score = score)
-    }
-
-    def scoreForClinic2: Float = {
-        val appointmentSize = appointmentService.getAppointments().values.size
-        val alertAppointmentSize = appointmentService.getAlertAppointments().keySet.size
-
-        (appointmentSize - alertAppointmentSize) / appointmentSize
-    }
-
-    def scoreByDoctor2(doctorId: Long): Float = {
-        val appointmentSize = appointmentService.getAppointments().values.size
-        val alertAppointmentSize = appointmentService.getAlertAppointments().keySet.size
-
-        (appointmentSize - alertAppointmentSize) / appointmentSize
     }
 
 }

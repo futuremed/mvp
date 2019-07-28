@@ -9,6 +9,7 @@ case class DoctorStatistic(id: Long,
                            experience: Int,
                            sex: SexType,
                            score: Float,
+                           alertAppointments: List[Appointment],
                            statistics: List[Statistics]) extends BaseModel
 
 object DoctorStatistic {

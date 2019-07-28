@@ -49,9 +49,9 @@ class InMemoryDbService {
     )
 
     private val hardcodedDoctors = List(
-        DoctorStatistic(1L, "Иванов", "Иван", 5, SexType.MALE, 7.8f, List()),
-        DoctorStatistic(2L, "Петров", "Сергей", 10, SexType.MALE, 8.9f, hardcodedHistoryForDoctorStatistic),
-        DoctorStatistic(3L, "Раздолькин", "Никита", 7, SexType.MALE, 7.8f, List()),
+        DoctorStatistic(2L, "Петров", "Сергей", 10, SexType.MALE, 8.9f, List(), hardcodedHistoryForDoctorStatistic),
+        DoctorStatistic(1L, "Иванов", "Иван", 5, SexType.MALE, 7.8f, List(), List()),
+        DoctorStatistic(3L, "Раздолькин", "Никита", 7, SexType.MALE, 7.8f, List(), List()),
     )
 
 

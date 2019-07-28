@@ -16,8 +16,8 @@ class AppointmentService {
         val patientId = appointment.patient.id
 
         currentAppointments.get(patientId) match {
-            case Some(xs) => currentAppointments(patientId) = xs :+ appointment
-                checkAppointsByUser(xs.last, appointment)
+            case Some(xs) => currentAppointments(patientId) = List(xs.head, appointment)
+                checkAppointsByUser(xs.head, appointment)
 
             case None => currentAppointments(patientId) = List(appointment)
         }
@@ -36,12 +36,16 @@ class AppointmentService {
 
         def isSameComplaints = appointmentBefore.complaints == appointmentAfter.complaints
 
-        if (!isSameConclusionCode && isSameComplaints) {
+        def isSameRecommendations = appointmentBefore.recommendations == appointmentAfter.recommendations
 
-            alertAppointments.get(patientId) match {
-                case Some(xs) => currentAppointments(patientId) = xs ++ List(appointmentBefore, appointmentAfter)
-                case None => currentAppointments(patientId) = List(appointmentBefore, appointmentAfter)
-            }
+        if (!isSameConclusionCode && isSameComplaints && isSameRecommendations) {
+            alertAppointments.put(patientId, List(appointmentBefore, appointmentAfter))
+
+        } else if (isSameConclusionCode && isSameComplaints && !isSameRecommendations) {
+            alertAppointments.put(patientId, List(appointmentBefore, appointmentAfter))
+
+        } else {
+            alertAppointments.remove(patientId)
         }
 
 
